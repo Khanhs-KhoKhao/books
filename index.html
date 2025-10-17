@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Cửa hàng công nghệ</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-img"><img src="./img/logo.jpg" alt="logo" width="48px"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="cart-icon" onclick="openCart()">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide"></div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.9), rgba(0, 242, 254, 0.9));"></div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(250, 112, 154, 0.9), rgba(254, 207, 239, 0.9));"></div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(48, 207, 208, 0.9), rgba(51, 8, 103, 0.9));"></div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(168, 237, 234, 0.9), rgba(254, 214, 227, 0.9));"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Chào mừng đến với Arabbit.shop</h1>
+            <p>Khám phá những trang sức đẹp và tốt nhất với giá cả hợp lý</p>
+            <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Mua sắm ngay
+            </button>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">Sản phẩm nổi bật</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image" >
+                    <img src="./img/alice mushroom nam do.jpg" alt="Alice Mushroom nấm đỏ" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Dây Alice Mushroom nấm đỏ</div>
+                    <div class="product-desc">
+                        Dây dài 65-75cm, mặt nấm 2.2x 1.8cm
+                    </div>
+                    <div class="product-footer">
+                        <div class="price">1.950.000đ</div>
+                        <button class="add-to-cart" onclick="addToCart('Laptop Gaming Pro')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./img/khuyen celeb.jpg" alt="Khuyên celeb" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Khuyên tai</div>
+                    <div class="product-desc">1 mẫu khuyên được các Celeb quốc cực ưa chuộng nè các bác ơi</div>
+                    <div class="product-footer">
+                        <div class="price">1.145.000₫</div>
+                        <button class="add-to-cart" onclick="addToCart('Smartphone Ultra')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./img/vong cung.jpg" alt="Vòng đeo tay vooc diamond" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Vòng cứng swa</div>
+                    <div class="product-desc">Chống ồn chủ động, Pin 30hVòng được mạ tone rose gold, mặt ngoài còn được đính thêm những viên pha lê vô cùng lấp lánh, nổi bật. </div>
+                    <div class="product-footer">
+                        <div class="price">2.650.000₫</div>
+                        <button class="add-to-cart" onclick="addToCart('Tai nghe ANC')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" >
+                    <img src="./img/teddy pink.jpg" alt="Teddy pink" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Tedy pink</div>
+                    <div class="product-desc">Set Teddy hồng mix ngọc trai mẫu mới tinh canh mãi mới có giá sale cho các bác đây ạ.</div>
+                    <div class="product-footer">
+                        <div class="price">3.990.000₫</div>
+                        <button class="add-to-cart" onclick="addToCart('Smartwatch Sport')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" >
+                    <img src="./img/cosnetella.jpg" alt="Cosnetella" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Constella</div>
+                    <div class="product-desc">Dây kèm theo thẻ BH nha</div>
+                    <div class="product-footer">
+                        <div class="price">4.590.000₫</div>
+                        <button class="add-to-cart" onclick="addToCart('Bàn phím cơ RGB')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./img/day evil eye.jpg" alt="Dây evil eye" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Dây Evil Eye</div>
+                    <div class="product-desc">Dây Evil Eye thuộc BST Symbolica với biểu tượng đôi mắt mang ý nghĩa vô cùng độc đáo, kết hợp hạt charm thêm phần bí ẩn</div>
+                    <div class="product-footer">
+                        <div class="price">1.990.000₫</div>
+                        <button class="add-to-cart" onclick="addToCart('Chuột gaming')">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Thỏ Swa. Tất cả quyền được bảo lưu.</p>
+        <p>Địa chỉ: Thanh Tri, Ha Noi | Hotline: 0354 xxxx</p>
+    </footer>
+
+    <div class="toast" id="toast">
+        ✓ Đã thêm vào giỏ hàng!
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>🛒 Giỏ hàng</h2>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div id="cartItems"></div>
+            <div id="cartFooter"></div>
+        </div>
+    </div>
+
+    <script src="assets/style.js"></script>
+</body>
+</html>
